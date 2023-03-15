@@ -30,6 +30,7 @@ app.post('/createLead', (req, res) => {
 
  // Read Leads
  app.get('/readLeads', (req, res) => {
+   res.setHeader("Access-Control-Allow-Credentials","true");
   UserModel.find({}, (err, objects) => {
     if (err) throw err;
     res.status(200).send(objects);
